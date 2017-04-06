@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Mar 30 23:26:05 2017
+
+@author: Badrinath Thirumalachari
+"""
+
 import csv
 import time
 import os, sys
