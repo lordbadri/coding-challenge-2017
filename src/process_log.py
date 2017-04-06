@@ -49,6 +49,7 @@ def feature_write(data):
     del active_ip
     
     #feature 2
+    #Bandwidth analysis
     print("writing feature 2 to resources.txt")
     sorted_path=data.groupby(['request'],as_index=False).agg({'content_size': np.sum}).sort('content_size',ascending=False).head(10)
     sorted_path['resource'] =  sorted_path["request"].apply(lambda x: x.split(' ')[1])
@@ -57,6 +58,7 @@ def feature_write(data):
     del sorted_path
     
     #feature3
+    #Peak hour analysis
     print("writing feature 3 to hours.txt")
     time_grouped=data.groupby("time_stamp",as_index=False).count()[['time_stamp','ip_address']]
     zone=time_grouped.head(1)["time_stamp"][0].split()[1]
